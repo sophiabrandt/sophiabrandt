@@ -30,7 +30,7 @@ md.use(emoji)
   const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`
   const devToBadge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=${badgeHeight}>](${devToUrl})`
 
-  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a self-taught programmer from Germany with a love for functional programming and learning new things.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n Script provided by [mokkaps](https://github.com/Mokkapps/mokkapps).`
+  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a self-taught programmer from Germany with a love for functional programming and learning new things.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<sup>Script provided by <a href="https://github.com/Mokkapps/mokkapps">mokkapps</a>.</sup>`
 
   const result = md.render(text)
 
