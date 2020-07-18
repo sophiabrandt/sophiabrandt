@@ -7,4 +7,4 @@
     <li><a href=https://www.rockyourcode.com/hello-world-from-flask-with-hylang-using-docker/>Hello World From Flask With Hylang (using Docker)</a></li><li><a href=https://www.rockyourcode.com/friday-picks-059/>Friday Picks 059</a></li><li><a href=https://www.rockyourcode.com/nativescript-with-android-emulator-on-arch-linux/>NativeScript With Android Emulator on Arch Linux</a></li><li><a href=https://www.rockyourcode.com/friday-picks-058/>Friday Picks 058</a></li><li><a href=https://www.rockyourcode.com/friday-picks-057/>Friday Picks 057</a></li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
-<p><sup>Script provided by <a href="https://github.com/Mokkapps/mokkapps">mokkapps</a>.</sup></p>
+<p><sup>Script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</sup></p>
