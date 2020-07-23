@@ -23,14 +23,14 @@ md.use(emoji)
   try {
     blogPosts = await loadBlogPosts()
   } catch (e) {
-    console.error(`Failed to load blog posts from ${websiteUrl}`, e)
+    console.error(`Failed to load blog posts from ${blogUrl}`, e)
   }
 
   const twitterBadge = `[<img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" height=${badgeHeight}>](${twitterUrl})`
   const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`
   const devToBadge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=${badgeHeight}>](${devToUrl})`
 
-  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a self-taught programmer from Germany with a love for functional programming and learning new things.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<small>Script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small>`
+  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a programmer from Germany with a love for functional programming and learning new things.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<small>Script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small>`
 
   const result = md.render(text)
 
@@ -40,13 +40,19 @@ md.use(emoji)
   })
 })()
 
+function convertBlogDate(pubDate) {
+  // input: "Mon, 20 Jul 2020 00:00:00 +0000"
+  // output: "2020-07-20"
+  return new Date(pubDate).toISOString().split('T')[0]
+}
+
 async function loadBlogPosts() {
   const feed = await parser.parseURL(`${blogUrl}/index.xml`)
 
   let links = ''
 
   feed.items.slice(0, blogPostLimit).forEach((item) => {
-    links += `<li><a href=${item.link}>${item.title}</a></li>`
+    links += `<li><a href=${item.link}>${item.title}</a> — ${convertBlogDate(item.pubDate)}</li>`
   })
 
   return `
