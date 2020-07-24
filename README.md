@@ -4,7 +4,7 @@
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/til-about-makefiles/>TIL About Makefiles</a> — 2020-07-20</li><li><a href=https://www.rockyourcode.com/hello-world-from-flask-with-hylang-using-docker/>Hello World From Flask With Hylang (using Docker)</a> — 2020-07-18</li><li><a href=https://www.rockyourcode.com/friday-picks-059/>Friday Picks 059</a> — 2020-07-17</li><li><a href=https://www.rockyourcode.com/nativescript-with-android-emulator-on-arch-linux/>NativeScript With Android Emulator on Arch Linux</a> — 2020-07-14</li><li><a href=https://www.rockyourcode.com/friday-picks-058/>Friday Picks 058</a> — 2020-07-10</li>
+    <li><a href=https://www.rockyourcode.com/friday-picks-060/>Friday Picks 060</a> — 2020-07-24</li><li><a href=https://www.rockyourcode.com/til-about-makefiles/>TIL About Makefiles</a> — 2020-07-20</li><li><a href=https://www.rockyourcode.com/hello-world-from-flask-with-hylang-using-docker/>Hello World From Flask With Hylang (using Docker)</a> — 2020-07-18</li><li><a href=https://www.rockyourcode.com/friday-picks-059/>Friday Picks 059</a> — 2020-07-17</li><li><a href=https://www.rockyourcode.com/nativescript-with-android-emulator-on-arch-linux/>NativeScript With Android Emulator on Arch Linux</a> — 2020-07-14</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
