@@ -30,7 +30,7 @@ md.use(emoji)
   const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`
   const devToBadge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=${badgeHeight}>](${devToUrl})`
 
-  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a programmer from Germany with a love for functional programming and learning new things.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small>`
+  const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a tax officer and programmer from Germany.\n\nI currently volunteer as a mentor for the Zero to Mastery Academy, home to over 300k students learning to code.\nWhen I was a stay-at-home mom I started teaching myself to code - and I never looked back. :purple_heart:\n\n\I enjoy functional programming languages, learning new things, and writing about it.\n\n${twitterBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small>`
 
   const result = md.render(text)
 
