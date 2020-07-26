@@ -7,7 +7,7 @@ When I was a stay-at-home mom I started teaching myself to code - and I never lo
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/friday-picks-060/>Friday Picks 060</a> — 2020-07-24</li><li><a href=https://www.rockyourcode.com/til-about-makefiles/>TIL About Makefiles</a> — 2020-07-20</li><li><a href=https://www.rockyourcode.com/hello-world-from-flask-with-hylang-using-docker/>Hello World From Flask With Hylang (using Docker)</a> — 2020-07-18</li><li><a href=https://www.rockyourcode.com/friday-picks-059/>Friday Picks 059</a> — 2020-07-17</li><li><a href=https://www.rockyourcode.com/nativescript-with-android-emulator-on-arch-linux/>NativeScript With Android Emulator on Arch Linux</a> — 2020-07-14</li>
+    <li><a href=https://www.rockyourcode.com/how-to-download-courses-from-teachable/>How to Download Courses From Teachable</a> — 2020-07-26</li><li><a href=https://www.rockyourcode.com/friday-picks-060/>Friday Picks 060</a> — 2020-07-24</li><li><a href=https://www.rockyourcode.com/til-about-makefiles/>TIL About Makefiles</a> — 2020-07-20</li><li><a href=https://www.rockyourcode.com/hello-world-from-flask-with-hylang-using-docker/>Hello World From Flask With Hylang (using Docker)</a> — 2020-07-18</li><li><a href=https://www.rockyourcode.com/friday-picks-059/>Friday Picks 059</a> — 2020-07-17</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
