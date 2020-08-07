@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/til-about-copying-a-range-in-vim/>TIL About Copying a Range in Vim</a> — 2020-08-02</li><li><a href=https://www.rockyourcode.com/friday-picks-061/>Friday Picks 061</a> — 2020-07-31</li><li><a href=https://www.rockyourcode.com/installing-and-managing-vim-plugins-with-vim-packager/>Installing and Managing Vim Plugins With vim-packager</a> — 2020-07-28</li><li><a href=https://www.rockyourcode.com/how-to-download-courses-from-teachable/>How to Download Courses From Teachable</a> — 2020-07-26</li><li><a href=https://www.rockyourcode.com/friday-picks-060/>Friday Picks 060</a> — 2020-07-24</li>
+    <li><a href=https://www.rockyourcode.com/friday-picks-062/>Friday Picks 062</a> — 2020-08-07</li><li><a href=https://www.rockyourcode.com/til-about-copying-a-range-in-vim/>TIL About Copying a Range in Vim</a> — 2020-08-02</li><li><a href=https://www.rockyourcode.com/friday-picks-061/>Friday Picks 061</a> — 2020-07-31</li><li><a href=https://www.rockyourcode.com/installing-and-managing-vim-plugins-with-vim-packager/>Installing and Managing Vim Plugins With vim-packager</a> — 2020-07-28</li><li><a href=https://www.rockyourcode.com/how-to-download-courses-from-teachable/>How to Download Courses From Teachable</a> — 2020-07-26</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
