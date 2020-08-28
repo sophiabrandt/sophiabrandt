@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/go-resources/>(Free) Go Golang Resources in 2020</a> — 2020-08-24</li><li><a href=https://www.rockyourcode.com/friday-picks-064/>Friday Picks 064</a> — 2020-08-21</li><li><a href=https://www.rockyourcode.com/til-about-adding-a-new-line-to-git-commit-m/>TIL About Adding a New Line to "git commit -m"</a> — 2020-08-20</li><li><a href=https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/>How to Deploy Eleventy to GitHub Pages With GitHub Actions</a> — 2020-08-16</li><li><a href=https://www.rockyourcode.com/friday-picks-063/>Friday Picks 063</a> — 2020-08-14</li>
+    <li><a href=https://www.rockyourcode.com/friday-picks-065/>Friday Picks 065</a> — 2020-08-28</li><li><a href=https://www.rockyourcode.com/go-resources/>(Free) Go Golang Resources in 2020</a> — 2020-08-24</li><li><a href=https://www.rockyourcode.com/friday-picks-064/>Friday Picks 064</a> — 2020-08-21</li><li><a href=https://www.rockyourcode.com/til-about-adding-a-new-line-to-git-commit-m/>TIL About Adding a New Line to "git commit -m"</a> — 2020-08-20</li><li><a href=https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/>How to Deploy Eleventy to GitHub Pages With GitHub Actions</a> — 2020-08-16</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
