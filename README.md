@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/traefik-2-docker-swarm-setup-with-docker-socket-proxy-and-more/>Traefik 2 Docker Swarm Setup With Docker Socket Proxy and More</a> — 2020-09-15</li><li><a href=https://www.rockyourcode.com/friday-picks-067/>Friday Picks 067</a> — 2020-09-11</li><li><a href=https://www.rockyourcode.com/friday-picks-066/>Friday Picks 066</a> — 2020-09-04</li><li><a href=https://www.rockyourcode.com/fsharp-language-support-for-vim-on-linux/>F# Language Support for Vim on Linux</a> — 2020-09-01</li><li><a href=https://www.rockyourcode.com/friday-picks-065/>Friday Picks 065</a> — 2020-08-28</li>
+    <li><a href=https://www.rockyourcode.com/friday-picks-068/>Friday Picks 068</a> — 2020-09-18</li><li><a href=https://www.rockyourcode.com/traefik-2-docker-swarm-setup-with-docker-socket-proxy-and-more/>Traefik 2 Docker Swarm Setup With Docker Socket Proxy and More</a> — 2020-09-15</li><li><a href=https://www.rockyourcode.com/friday-picks-067/>Friday Picks 067</a> — 2020-09-11</li><li><a href=https://www.rockyourcode.com/friday-picks-066/>Friday Picks 066</a> — 2020-09-04</li><li><a href=https://www.rockyourcode.com/fsharp-language-support-for-vim-on-linux/>F# Language Support for Vim on Linux</a> — 2020-09-01</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
