@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/friday-picks-074/>Friday Picks 074</a> — 2020-10-30</li><li><a href=https://www.rockyourcode.com/friday-picks-073/>Friday Picks 073</a> — 2020-10-23</li><li><a href=https://www.rockyourcode.com/how-to-run-react-native-expo-web-in-a-docker-container/>How to Run React Native Expo Web in a Docker Container</a> — 2020-10-20</li><li><a href=https://www.rockyourcode.com/friday-picks-072/>Friday Picks 072</a> — 2020-10-16</li><li><a href=https://www.rockyourcode.com/til-from-the-epic-react-basic-react-hooks-workshop/>4 TILS from the Epic React Basic React Hooks Workshop</a> — 2020-10-11</li>
+    <li><a href=https://www.rockyourcode.com/oreilly-learning-for-half-the-price-or-less/>O'Reilly Learning for Half the Price (or Less)</a> — 2020-11-04</li><li><a href=https://www.rockyourcode.com/friday-picks-074/>Friday Picks 074</a> — 2020-10-30</li><li><a href=https://www.rockyourcode.com/friday-picks-073/>Friday Picks 073</a> — 2020-10-23</li><li><a href=https://www.rockyourcode.com/how-to-run-react-native-expo-web-in-a-docker-container/>How to Run React Native Expo Web in a Docker Container</a> — 2020-10-20</li><li><a href=https://www.rockyourcode.com/friday-picks-072/>Friday Picks 072</a> — 2020-10-16</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
