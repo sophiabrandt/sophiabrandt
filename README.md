@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/friday-picks-076/>Friday Picks 076</a> — 2020-11-11</li><li><a href=https://www.rockyourcode.com/friday-picks-075/>Friday Picks 075</a> — 2020-11-06</li><li><a href=https://www.rockyourcode.com/oreilly-learning-for-half-the-price-or-less/>O'Reilly Learning for Half the Price (or Less)</a> — 2020-11-04</li><li><a href=https://www.rockyourcode.com/friday-picks-074/>Friday Picks 074</a> — 2020-10-30</li><li><a href=https://www.rockyourcode.com/friday-picks-073/>Friday Picks 073</a> — 2020-10-23</li>
+    <li><a href=https://www.rockyourcode.com/til-about-vims-changelist/>TIL About Vim's Changelist</a> — 2020-11-19</li><li><a href=https://www.rockyourcode.com/friday-picks-076/>Friday Picks 076</a> — 2020-11-11</li><li><a href=https://www.rockyourcode.com/friday-picks-075/>Friday Picks 075</a> — 2020-11-06</li><li><a href=https://www.rockyourcode.com/oreilly-learning-for-half-the-price-or-less/>O'Reilly Learning for Half the Price (or Less)</a> — 2020-11-04</li><li><a href=https://www.rockyourcode.com/friday-picks-074/>Friday Picks 074</a> — 2020-10-30</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
