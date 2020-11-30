@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/friday-picks-078/>Friday Picks 078</a> — 2020-11-27</li><li><a href=https://www.rockyourcode.com/black-friday-deals-2020/>Black Friday Deals 2020</a> — 2020-11-25</li><li><a href=https://www.rockyourcode.com/friday-picks-077/>Friday Picks 077</a> — 2020-11-20</li><li><a href=https://www.rockyourcode.com/til-about-vims-changelist/>TIL About Vim's Changelist</a> — 2020-11-19</li><li><a href=https://www.rockyourcode.com/friday-picks-076/>Friday Picks 076</a> — 2020-11-11</li>
+    <li><a href=https://www.rockyourcode.com/how-to-extend-express-request-with-session-in-typescript-ts23339-error/>How to Extend Express Request With Session in Typescript (TS2339 error)</a> — 2020-11-30</li><li><a href=https://www.rockyourcode.com/friday-picks-078/>Friday Picks 078</a> — 2020-11-27</li><li><a href=https://www.rockyourcode.com/black-friday-deals-2020/>Black Friday Deals 2020</a> — 2020-11-25</li><li><a href=https://www.rockyourcode.com/friday-picks-077/>Friday Picks 077</a> — 2020-11-20</li><li><a href=https://www.rockyourcode.com/til-about-vims-changelist/>TIL About Vim's Changelist</a> — 2020-11-19</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
