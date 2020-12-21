@@ -40,19 +40,13 @@ md.use(emoji)
   })
 })()
 
-function convertBlogDate(pubDate) {
-  // input: "Mon, 20 Jul 2020 00:00:00 +0000"
-  // output: "2020-07-20"
-  return new Date(pubDate).toISOString().split('T')[0]
-}
-
 async function loadBlogPosts() {
   const feed = await parser.parseURL(`${blogUrl}/index.xml`)
 
   let links = ''
 
   feed.items.slice(0, blogPostLimit).forEach((item) => {
-    links += `<li><a href=${item.link}>${item.title}</a> — ${convertBlogDate(item.pubDate)}</li>`
+    links += `<li><a href=${item.link}>${item.title}</a> — ${item.pubDate}</li>`
   })
 
   return `
