@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/notes-about-the-craft-of-writing-effectively/>Notes About the Craft of Writing Effectively</a> — 2020-12-24</li><li><a href=https://www.rockyourcode.com/the-blog-has-a-newsletter/>The Blog Has a Newsletter</a> — 2020-12-20</li><li><a href=https://www.rockyourcode.com/friday-picks-081/>Friday Picks 081</a> — 2020-12-18</li><li><a href=https://www.rockyourcode.com/useful-vim-tricks-for-search-and-replace/>Useful Vim Tricks for Search and Replace</a> — 2020-12-16</li><li><a href=https://www.rockyourcode.com/friday-picks-080/>Friday Picks 080</a> — 2020-12-11</li>
+    <li><a href=https://www.rockyourcode.com/learning-strategies-that-experts-use/>Learning Strategies That Experts Use</a> — 2020-12-29</li><li><a href=https://www.rockyourcode.com/notes-about-the-craft-of-writing-effectively/>Notes About the Craft of Writing Effectively</a> — 2020-12-24</li><li><a href=https://www.rockyourcode.com/the-blog-has-a-newsletter/>The Blog Has a Newsletter</a> — 2020-12-20</li><li><a href=https://www.rockyourcode.com/friday-picks-081/>Friday Picks 081</a> — 2020-12-18</li><li><a href=https://www.rockyourcode.com/useful-vim-tricks-for-search-and-replace/>Useful Vim Tricks for Search and Replace</a> — 2020-12-16</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
