@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/we-overestimate-social-costs/>We Overestimate Social Costs</a> — 2021-05-22</li><li><a href=https://www.rockyourcode.com/deploy-to-github-pages-without-jekyll/>Deploy to GitHub Pages Without Jekyll</a> — 2021-05-21</li><li><a href=https://www.rockyourcode.com/how-i-setup-go-with-vim/>How I Setup Go With Vim</a> — 2021-05-20</li><li><a href=https://www.rockyourcode.com/experiment-100-days-of-blogging/>Experiment: 100 Days of Blogging</a> — 2021-05-19</li><li><a href=https://www.rockyourcode.com/fake-webcam-background-for-arch-linux-with-docker/>Fake Webcam Background for Arch Linux With Docker (Using akvcam)</a> — 2021-05-03</li>
+    <li><a href=https://www.rockyourcode.com/why-vim-works-for-me/>Why Vim Works for Me</a> — 2021-05-23</li><li><a href=https://www.rockyourcode.com/we-overestimate-social-costs/>We Overestimate Social Costs</a> — 2021-05-22</li><li><a href=https://www.rockyourcode.com/deploy-to-github-pages-without-jekyll/>Deploy to GitHub Pages Without Jekyll</a> — 2021-05-21</li><li><a href=https://www.rockyourcode.com/how-i-setup-go-with-vim/>How I Setup Go With Vim</a> — 2021-05-20</li><li><a href=https://www.rockyourcode.com/experiment-100-days-of-blogging/>Experiment: 100 Days of Blogging</a> — 2021-05-19</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
