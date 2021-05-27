@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/would-i-do-it-differently/>Would I Do It Differently?</a> — 2021-05-26</li><li><a href=https://www.rockyourcode.com/remember-to-focus/>Remember to Focus</a> — 2021-05-25</li><li><a href=https://www.rockyourcode.com/rules-by-sandi-metz/>Rules, by Sandi Metz</a> — 2021-05-24</li><li><a href=https://www.rockyourcode.com/why-vim-works-for-me/>Why Vim Works for Me</a> — 2021-05-23</li><li><a href=https://www.rockyourcode.com/we-overestimate-social-costs/>We Overestimate Social Costs</a> — 2021-05-22</li>
+    <li><a href=https://www.rockyourcode.com/use-jetbrains-mono-in-vs-code/>Use Jetbrains Mono in VS Code (or: Can You Adjust Line Spacing?)</a> — 2021-05-27</li><li><a href=https://www.rockyourcode.com/would-i-do-it-differently/>Would I Do It Differently?</a> — 2021-05-26</li><li><a href=https://www.rockyourcode.com/remember-to-focus/>Remember to Focus</a> — 2021-05-25</li><li><a href=https://www.rockyourcode.com/rules-by-sandi-metz/>Rules, by Sandi Metz</a> — 2021-05-24</li><li><a href=https://www.rockyourcode.com/why-vim-works-for-me/>Why Vim Works for Me</a> — 2021-05-23</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
