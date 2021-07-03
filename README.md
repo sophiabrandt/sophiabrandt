@@ -1,5 +1,5 @@
 <h1>Hi. 👋</h1>
-<p>I'm Sophia Brandt. I'm a tax officer and programmer from Germany.</p>
+<p>I'm Sophia Brandt. I'm a former tax officer and programmer from Germany.</p>
 <p>I currently volunteer as a mentor for the Zero to Mastery Academy, home to over 300k students learning to code.<br>
 When I was a stay-at-home mom, I started teaching myself to code - and I never looked back. 💜</p>
 <p>I enjoy functional programming languages, learning new things, and writing about it.</p>
@@ -7,7 +7,7 @@ When I was a stay-at-home mom, I started teaching myself to code - and I never l
 <p><a href="https://www.sophiabrandt.com">🌐 Check out my website</a></p>
 <h1>Latest Blog Posts</h1>
   <ul>
-    <li><a href=https://www.rockyourcode.com/i-started-my-new-job/>I Started My New Job (And Have MacOS Woes)</a> — 2021-07-01</li><li><a href=https://www.rockyourcode.com/til-how-to-remove-headers-from-ps-command-on-macos/>TIL: How to Remove Headers From ps Command on MacOs</a> — 2021-06-30</li><li><a href=https://www.rockyourcode.com/how-to-build-any-kind-of-app-by-andrea-bizzotto/>How to Build Any Kind of App by Andrea Bizzotto</a> — 2021-06-29</li><li><a href=https://www.rockyourcode.com/how-i-remove-duplicate-lines-from-a-file-with-awk/>How I Remove Duplicate Lines From a File With awk</a> — 2021-06-28</li><li><a href=https://www.rockyourcode.com/notes-on-how-to-promote-yourself-to-potential-employers/>Notes on ”How to Promote Yourself to Potential Employers”</a> — 2021-06-27</li>
+    <li><a href=https://www.rockyourcode.com/til-how-to-fix-cannot-read-termcap-database-with-tmux-and-kitty-on-macos/>TIL: How to Fix ”Cannot Read Termcap Database” With Tmux and Kitty on Macos</a> — 2021-07-03</li><li><a href=https://www.rockyourcode.com/notes-on-saas-software-engineering-and-social-media-with-simon-hoiberg/>Notes on “Hashnode Talks: Saas, Software Engineering and Social Media With Simon Høiberg“</a> — 2021-07-02</li><li><a href=https://www.rockyourcode.com/i-started-my-new-job/>I Started My New Job (And Have MacOS Woes)</a> — 2021-07-01</li><li><a href=https://www.rockyourcode.com/til-how-to-remove-headers-from-ps-command-on-macos/>TIL: How to Remove Headers From ps Command on MacOs</a> — 2021-06-30</li><li><a href=https://www.rockyourcode.com/how-to-build-any-kind-of-app-by-andrea-bizzotto/>How to Build Any Kind of App by Andrea Bizzotto</a> — 2021-06-29</li>
   </ul>
 <p><a href="https://www.rockyourcode.com">➡️ More blog posts</a></p>
 <p><small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small></p>
