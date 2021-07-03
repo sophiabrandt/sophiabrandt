@@ -1,5 +1,5 @@
 <h1>Hi. 👋</h1>
-<p>I'm Sophia Brandt. I'm a former tax officer and programmer from Germany.</p>
+<p>I'm Sophia Brandt. I'm a former tax officer turned programmer from Germany.</p>
 <p>I currently volunteer as a mentor for the Zero to Mastery Academy, home to over 300k students learning to code.<br>
 When I was a stay-at-home mom, I started teaching myself to code - and I never looked back. 💜</p>
 <p>I enjoy functional programming languages, learning new things, and writing about it.</p>
