@@ -1,6 +1,6 @@
 import {
-  BlogPostGenerator,
-  BlogPostGeneratorConfig,
+  BlogPostsGenerator,
+  BlogPostsGeneratorConfig,
   MarkdownRenderer,
   RssParser,
   writeToFile,
@@ -67,12 +67,14 @@ describe("RssParser", () => {
 
 describe("BlogPostGenerator", () => {
   const setup = () => {
-    const blogpostGeneratorConfig = new BlogPostGeneratorConfig(
-      "https://example.com",
-      "mastodon url",
-      "linkedIn url",
-      "dev.to url",
-      "https://mywebsiteurl",
+    const blogpostGeneratorConfig = new BlogPostsGeneratorConfig(
+      {
+        blogUrl: "https://example.com",
+        mastodonUrl: "mastodon url",
+        linkedInUrl: "linkedIn url",
+        devToUrl: "dev.to url",
+        websiteUrl: "https://mywebsiteurl",
+      },
       1,
       "20"
     );
@@ -90,7 +92,7 @@ describe("BlogPostGenerator", () => {
       parseURL: jest.fn().mockReturnValue(mockFeed),
     });
     const rssParser = new RssParser(parserInstance);
-    const blogPostGenerator = new BlogPostGenerator(
+    const blogPostGenerator = new BlogPostsGenerator(
       rssParser,
       blogpostGeneratorConfig
     );
