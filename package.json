@@ -1,10 +1,10 @@
 {
   "name": "github-readme-sophiabrandt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "self-updating readme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +23,12 @@
     "markdown-it-emoji": "^2.0.2",
     "prettier": "^2.6.2",
     "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-emoji": "^2.0.2",
+    "@types/node": "^20.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   }
 }
