@@ -6,12 +6,17 @@ import {
   writeToFile,
 } from "./index";
 import MarkdownIt from "markdown-it";
-import { BlogFeedException, WriteFileException, assertType } from "./util";
+import {
+  BlogFeedException,
+  EmptyArrayException,
+  WriteFileException,
+  assertType,
+} from "./util";
 import Parser from "rss-parser";
 import * as fs from "fs";
 
 describe("MarkdownRenderer", () => {
-  it("should return rendered markdown", () => {
+  it("returns rendered markdown", () => {
     const txt = "## Text";
     const rendered = "<h2>Text</h2>\n";
     const markdownItInstance = assertType<MarkdownIt>({
@@ -26,7 +31,7 @@ describe("MarkdownRenderer", () => {
 });
 
 describe("RssParser", () => {
-  it("should parse blog post items from RSS feed", async () => {
+  it("parses blog post items from RSS feed", async () => {
     const mockFeed = {
       items: [
         {
@@ -49,7 +54,7 @@ describe("RssParser", () => {
     expect(parserInstance.parseURL).toHaveBeenCalledWith(url + "/index.xml");
   });
 
-  it("should throw BlogFeedException when parsing fails", async () => {
+  it("throws BlogFeedException when parsing fails", async () => {
     const error = new Error("Parse error");
     const parserInstance = assertType<Parser>({
       parseURL: jest.fn().mockRejectedValue(error),
@@ -66,18 +71,12 @@ describe("RssParser", () => {
 });
 
 describe("BlogPostGenerator", () => {
-  const setup = () => {
-    const blogpostGeneratorConfig = new BlogPostsGeneratorConfig(
-      {
-        blogUrl: "https://example.com",
-        mastodonUrl: "mastodon url",
-        linkedInUrl: "linkedIn url",
-        devToUrl: "dev.to url",
-        websiteUrl: "https://mywebsiteurl",
-      },
-      1,
-      "20"
-    );
+  const getEmptyFeedItemsParser = (): Parser =>
+    assertType<Parser>({
+      parseURL: jest.fn().mockReturnValue({ items: [] }),
+    });
+
+  const getMockFeedParser = (): Parser => {
     const mockFeed = {
       items: [
         {
@@ -88,32 +87,56 @@ describe("BlogPostGenerator", () => {
         },
       ],
     };
-    const parserInstance = assertType<Parser>({
+
+    return assertType<Parser>({
       parseURL: jest.fn().mockReturnValue(mockFeed),
     });
-    const rssParser = new RssParser(parserInstance);
-    const blogPostGenerator = new BlogPostsGenerator(
-      rssParser,
-      blogpostGeneratorConfig
-    );
-
-    return { blogPostGenerator };
   };
 
-  it("should generate links", async () => {
-    const { blogPostGenerator } = setup();
+  const setup = (parserStrategy: () => Parser) => {
+    const blogpostsGeneratorConfig = new BlogPostsGeneratorConfig(
+      {
+        blogUrl: "https://example.com",
+        mastodonUrl: "mastodon url",
+        linkedInUrl: "linkedIn url",
+        devToUrl: "dev.to url",
+        websiteUrl: "https://mywebsiteurl",
+      },
+      1,
+      "20"
+    );
 
-    const result = await blogPostGenerator.generateBlogPosts();
+    const parserInstance = parserStrategy();
+    const rssParser = new RssParser(parserInstance);
+    const blogPostsGenerator = new BlogPostsGenerator(
+      rssParser,
+      blogpostsGeneratorConfig
+    );
+
+    return { blogPostsGenerator };
+  };
+
+  it("throws exception on empty blog feed items", async () => {
+    const { blogPostsGenerator } = setup(getEmptyFeedItemsParser);
+    await expect(blogPostsGenerator.generateBlogPosts()).rejects.toThrow(
+      new BlogFeedException("Empty array is not allowed as input")
+    );
+  });
+
+  it("generates links", async () => {
+    const { blogPostsGenerator } = setup(getMockFeedParser);
+
+    const result = await blogPostsGenerator.generateBlogPosts();
 
     expect(result).toMatch(
       /<ul>\s*<li><a href="https:\/\/example\.com\/blog-post">my title<\/a> — 2022-01-01<\/li>\s*<\/ul>/
     );
   });
 
-  it("should generate text", () => {
-    const { blogPostGenerator } = setup();
+  it("generates complete text from blog posts", () => {
+    const { blogPostsGenerator } = setup(getMockFeedParser);
 
-    const result = blogPostGenerator.generateText("my blogposts");
+    const result = blogPostsGenerator.generateText("my blogposts");
     expect(result).toEqual(
       expect.stringContaining(
         `<img src="https://img.shields.io/badge/mastodon-6364FF.svg?&style=for-the-badge&logo=mastodon&logoColor=white" height=20>`
@@ -149,7 +172,7 @@ describe("writeToFile", () => {
     expect(fs.promises.writeFile).toHaveBeenCalledWith(filename, content);
   });
 
-  it("throws an exception if writeFile fails", async () => {
+  it("throws WriteFileException if writeFile fails", async () => {
     const error = new Error("writeFile failed");
     jest.spyOn(fs.promises, "writeFile").mockRejectedValue(error);
 
