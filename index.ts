@@ -1,11 +1,13 @@
-const md = require("markdown-it")({
+import MarkdownIt from "markdown-it";
+import emoji from "markdown-it-emoji";
+import fs from "fs";
+import Parser from "rss-parser";
+
+const md = new MarkdownIt({
   html: true, // Enable HTML tags in source
   breaks: true, // Convert '\n' in paragraphs into <br>
   linkify: true, // Autoconvert URL-like text to links
 });
-const emoji = require("markdown-it-emoji");
-const fs = require("fs");
-const Parser = require("rss-parser");
 
 const parser = new Parser();
 
