@@ -44,3 +44,7 @@ export class ImpossibleException extends RuntimeException {
     Object.setPrototypeOf(this, ImpossibleException.prototype);
   }
 }
+
+export function assertType<T>(object: unknown = undefined): T {
+  return object as T;
+}
