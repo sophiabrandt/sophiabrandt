@@ -10,6 +10,6 @@ When I was on parental leave, I started teaching myself to code - and I never lo
         <li><a href="https://www.rockyourcode.com/kickstart-your-neovim-journey-with-kickstart-nvim/">Kickstart Your Neovim Journey With kickstart.nvim</a> — 2023-07-06</li><li><a href="https://www.rockyourcode.com/how-to-download-html-elements-as-pdf/">How to Download HTML Elements as PDF</a> — 2023-06-22</li><li><a href="https://www.rockyourcode.com/use-css-grid-for-decorative-elements/">Use CSS Grid for Decorative Elements</a> — 2023-03-09</li><li><a href="https://www.rockyourcode.com/use-hostbinding-to-access-css-variables-in-an-angular-component/">Use @Hostbinding to Access CSS Variables in an Angular Component</a> — 2023-03-07</li><li><a href="https://www.rockyourcode.com/angular-workspaces-as-alternative-to-nx-monorepo/">Angular Workspaces as Alternative to Nx Monorepo</a> — 2023-02-18</li>
       </ul>
 <a href=https://www.rockyourcode.com>:arrow_right: More blog posts</a><hr />
-<p>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.<br>
-But now rewritten in TypeScript.<br>
-<a href="https://typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-007acc.svg?&style=for-the-badge&logo=TypeScript&logoColor=white" height=25></a></p>
+<p>Original GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.<br>
+Rewritten to use TypeScript &amp; Jest.<br>
+<a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/index.ts"><img src="https://img.shields.io/badge/TypeScript-007acc.svg?&style=for-the-badge&logo=TypeScript&logoColor=white" height=25></a> <a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/index.spec.ts"><img src="https://img.shields.io/badge/Jest-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=white" height=25></a></p>

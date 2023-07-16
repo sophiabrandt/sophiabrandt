@@ -119,11 +119,17 @@ export class BlogPostsGenerator {
     const typeScriptBadge = this.generateBadge({
       name: "TypeScript",
       color: "007acc",
-      url: "https://typescriptlang.org",
+      url: "https://github.com/sophiabrandt/sophiabrandt/blob/master/index.ts",
       logoName: "TypeScript",
     });
+    const jestBadge = this.generateBadge({
+      name: "Jest",
+      color: "C21325",
+      url: "https://github.com/sophiabrandt/sophiabrandt/blob/master/index.spec.ts",
+      logoName: "Jest",
+    });
 
-    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT consultancy. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\n\I enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.\nBut now rewritten in TypeScript.\n${typeScriptBadge}`;
+    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT consultancy. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\n\I enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.\nRewritten to use TypeScript & Jest.\n${typeScriptBadge} ${jestBadge}`;
 
     return text;
   }
