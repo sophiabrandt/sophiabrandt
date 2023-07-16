@@ -64,7 +64,7 @@ describe("RssParser", () => {
     const url = "https://example.com";
 
     await expect(rssParser.parseBlogFeedItems(url)).rejects.toThrow(
-      BlogFeedException
+      BlogFeedException,
     );
     expect(parserInstance.parseURL).toHaveBeenCalledWith(url + "/index.xml");
   });
@@ -103,14 +103,14 @@ describe("BlogPostGenerator", () => {
         websiteUrl: "https://mywebsiteurl",
       },
       1,
-      "20"
+      "20",
     );
 
     const parserInstance = parserStrategy();
     const rssParser = new RssParser(parserInstance);
     const blogPostsGenerator = new BlogPostsGenerator(
       rssParser,
-      blogpostsGeneratorConfig
+      blogpostsGeneratorConfig,
     );
 
     return { blogPostsGenerator };
@@ -119,7 +119,7 @@ describe("BlogPostGenerator", () => {
   it("throws exception on empty blog feed items", async () => {
     const { blogPostsGenerator } = setup(getEmptyFeedItemsParser);
     await expect(blogPostsGenerator.generateBlogPosts()).rejects.toThrow(
-      new BlogFeedException("Empty array is not allowed as input")
+      new BlogFeedException("Empty array is not allowed as input"),
     );
   });
 
@@ -129,7 +129,7 @@ describe("BlogPostGenerator", () => {
     const result = await blogPostsGenerator.generateBlogPosts();
 
     expect(result).toMatch(
-      /<ul>\s*<li><a href="https:\/\/example\.com\/blog-post">my title<\/a> — 2022-01-01<\/li>\s*<\/ul>/
+      /<ul>\s*<li><a href="https:\/\/example\.com\/blog-post">my title<\/a> — 2022-01-01<\/li>\s*<\/ul>/,
     );
   });
 
@@ -139,24 +139,24 @@ describe("BlogPostGenerator", () => {
     const result = blogPostsGenerator.generateText("my blogposts");
     expect(result).toEqual(
       expect.stringContaining(
-        `<img src="https://img.shields.io/badge/mastodon-6364FF.svg?&style=for-the-badge&logo=mastodon&logoColor=white" height=20>`
-      )
+        `<img src="https://img.shields.io/badge/mastodon-6364FF.svg?&style=for-the-badge&logo=mastodon&logoColor=white" height=20>`,
+      ),
     );
     expect(result).toEqual(
       expect.stringContaining(
-        `<img src="https://img.shields.io/badge/linkedin-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=20>`
-      )
+        `<img src="https://img.shields.io/badge/linkedin-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=20>`,
+      ),
     );
     expect(result).toEqual(
       expect.stringContaining(
-        `<img src="https://img.shields.io/badge/DEV.TO-0A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=20>`
-      )
+        `<img src="https://img.shields.io/badge/DEV.TO-0A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=20>`,
+      ),
     );
 
     expect(result).toEqual(
       expect.stringContaining(
-        "<a href=https://example.com>:arrow_right: More blog posts</a>"
-      )
+        "<a href=https://example.com>:arrow_right: More blog posts</a>",
+      ),
     );
   });
 });
@@ -180,7 +180,7 @@ describe("writeToFile", () => {
     const content = "This is a test content";
 
     await expect(writeToFile(filename, content)).rejects.toThrow(
-      new WriteFileException(error)
+      new WriteFileException(error),
     );
     expect(fs.promises.writeFile).toHaveBeenCalledWith(filename, content);
   });

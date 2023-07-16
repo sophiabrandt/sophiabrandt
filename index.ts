@@ -50,14 +50,14 @@ export class BlogPostsGeneratorConfig {
   constructor(
     public readonly urls: URLs,
     public readonly blogPostLimit: number,
-    public readonly badgeHeight: string
+    public readonly badgeHeight: string,
   ) {}
 }
 
 export class BlogPostsGenerator {
   constructor(
     private rssParser: RssParser,
-    public readonly config: BlogPostsGeneratorConfig
+    public readonly config: BlogPostsGeneratorConfig,
   ) {}
 
   private generateBadge({
@@ -76,7 +76,7 @@ export class BlogPostsGenerator {
 
   async generateBlogPosts(): Promise<string> {
     const feedItems = await this.rssParser.parseBlogFeedItems(
-      this.config.urls.blogUrl
+      this.config.urls.blogUrl,
     );
     return this.generateLinksFromBlog(feedItems);
   }
@@ -88,7 +88,7 @@ export class BlogPostsGenerator {
       .slice(0, this.config.blogPostLimit)
       .map(
         ({ link, title, pubDate }) =>
-          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`
+          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
       .join("");
 
@@ -140,14 +140,14 @@ const markdownRenderer = new MarkdownRenderer(
     html: true,
     breaks: true,
     linkify: true,
-  }).use(emoji)
+  }).use(emoji),
 );
 
 const rssParser = new RssParser(new Parser());
 
 export async function writeToFile(
   filename: string,
-  content: string
+  content: string,
 ): Promise<void> {
   try {
     await fs.writeFile(filename, content);
@@ -166,12 +166,12 @@ async function buildTextFromRssFeed() {
       websiteUrl,
     },
     blogPostLimit,
-    badgeHeight
+    badgeHeight,
   );
 
   const blogPostsGenerator = new BlogPostsGenerator(
     rssParser,
-    blogPostGeneratorConfig
+    blogPostGeneratorConfig,
   );
   const blogPosts = await blogPostsGenerator.generateBlogPosts();
   return blogPostsGenerator.generateText(blogPosts);
