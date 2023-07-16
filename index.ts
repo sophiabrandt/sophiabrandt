@@ -9,14 +9,42 @@ import {
   WriteFileException,
 } from "./util";
 
-const md = new MarkdownIt({
-  html: true, // Enable HTML tags in source
-  breaks: true, // Convert '\n' in paragraphs into <br>
-  linkify: true, // Autoconvert URL-like text to links
-});
-md.use(emoji);
+class MarkdownRenderer {
+  private md: MarkdownIt;
 
-const parser = new Parser();
+  constructor() {
+    this.md = new MarkdownIt({
+      html: true,
+      breaks: true,
+      linkify: true,
+    });
+    this.md.use(emoji);
+  }
+
+  renderMarkdown(text: string): string {
+    return this.md.render(text);
+  }
+}
+
+class RssParser {
+  private parser: Parser;
+
+  constructor() {
+    this.parser = new Parser();
+  }
+
+  async parseBlogFeedItems(blogUrl: string): Promise<Item[]> {
+    try {
+      const { items } = await this.parser.parseURL(`${blogUrl}/index.xml`);
+      return items;
+    } catch (err) {
+      throw new BlogFeedException(err);
+    }
+  }
+}
+
+const markdownRenderer = new MarkdownRenderer();
+const rssParser = new RssParser();
 
 const blogUrl = "https://www.rockyourcode.com";
 const websiteUrl = "https://www.sophiabrandt.com";
@@ -28,21 +56,14 @@ const badgeHeight = "25";
 
 async function main(): Promise<void> {
   const blogPosts = await generateBlogPosts();
-
   const text = generateText(blogPosts);
-
-  const renderedMarkdown = md.render(text);
-
+  const renderedMarkdown = markdownRenderer.renderMarkdown(text);
   await writeToFile("README.md", renderedMarkdown);
 }
 
-async function parseBlogFeedItems(): Promise<Item[]> {
-  try {
-    const { items } = await parser.parseURL(`${blogUrl}/index.xml`);
-    return items;
-  } catch (err) {
-    throw new BlogFeedException(err);
-  }
+async function generateBlogPosts(): Promise<string> {
+  const feedItems = await rssParser.parseBlogFeedItems(blogUrl);
+  return generateLinksFromBlog(feedItems);
 }
 
 function generateLinksFromBlog(feedItems: Item[]): string {
@@ -64,16 +85,13 @@ function generateLinksFromBlog(feedItems: Item[]): string {
   `;
 }
 
-async function generateBlogPosts(): Promise<string> {
-  const feedItems = await parseBlogFeedItems();
-  return generateLinksFromBlog(feedItems);
-}
-
 function generateText(blogPosts: string): string {
+  // Generate the badge links
   const mastodonBadge = `[<img src="https://img.shields.io/badge/mastodon-6364FF.svg?&style=for-the-badge&logo=mastodon&logoColor=white" height=${badgeHeight}>](${mastodonUrl})`;
   const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`;
   const devToBadge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg?&style=for-the-badge&logo=dev-dot-to&logoColor=white" height=${badgeHeight}>](${devToUrl})`;
 
+  // Concatenate the text
   const text = `# Hi. :wave:\n\nI'm Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT service provider. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 300k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\n\I enjoy learning new programming languages, language learning (currently Esperanto), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${websiteUrl})\n\n# Latest Blog Posts\n${blogPosts}\n<small>Original GitHub script provided by <a href="https://github.com/Mokkapps">Mokkapps</a>.</small>`;
 
   return text;
@@ -91,5 +109,5 @@ async function writeToFile(filename: string, content: string): Promise<void> {
 try {
   main();
 } catch (err) {
-  throw new ImpossibleException();
+  throw new ImpossibleException(err);
 }
