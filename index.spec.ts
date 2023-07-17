@@ -6,12 +6,7 @@ import {
   writeToFile,
 } from "./index";
 import MarkdownIt from "markdown-it";
-import {
-  BlogFeedException,
-  EmptyArrayException,
-  WriteFileException,
-  assertType,
-} from "./util";
+import { BlogFeedException, WriteFileException, assertType } from "./util";
 import Parser from "rss-parser";
 import * as fs from "fs";
 
@@ -109,34 +104,28 @@ describe("BlogPostGenerator", () => {
     const parserInstance = parserStrategy();
     const rssParser = new RssParser(parserInstance);
     const blogPostsGenerator = new BlogPostsGenerator(
-      rssParser,
       blogpostsGeneratorConfig,
+      rssParser,
     );
 
     return { blogPostsGenerator };
   };
 
-  it("throws exception on empty blog feed items", async () => {
+  it("throws an exception when it fails", async () => {
     const { blogPostsGenerator } = setup(getEmptyFeedItemsParser);
-    await expect(blogPostsGenerator.generateBlogPosts()).rejects.toThrow(
+
+    await expect(blogPostsGenerator.generateMdText()).rejects.toThrow(
       new BlogFeedException("Empty array is not allowed as input"),
     );
   });
 
-  it("generates links", async () => {
+  it("generates markdown from blog posts", async () => {
     const { blogPostsGenerator } = setup(getMockFeedParser);
 
-    const result = await blogPostsGenerator.generateBlogPosts();
+    const result = await blogPostsGenerator.generateMdText();
 
-    expect(result).toMatch(
-      /<ul>\s*<li><a href="https:\/\/example\.com\/blog-post">my title<\/a> — 2022-01-01<\/li>\s*<\/ul>/,
-    );
-  });
+    expect(result).toEqual(expect.stringContaining("# Hi. :wave"));
 
-  it("generates complete text from blog posts", () => {
-    const { blogPostsGenerator } = setup(getMockFeedParser);
-
-    const result = blogPostsGenerator.generateText("my blogposts");
     expect(result).toEqual(
       expect.stringContaining(
         `<img src="https://img.shields.io/badge/mastodon-6364FF.svg?&style=for-the-badge&logo=mastodon&logoColor=white" height=20>`,
@@ -156,6 +145,14 @@ describe("BlogPostGenerator", () => {
     expect(result).toEqual(
       expect.stringContaining(
         "<a href=https://example.com>:arrow_right: More blog posts</a>",
+      ),
+    );
+
+    expect(result).toEqual(
+      expect.stringContaining(
+        `<ul>
+        <li><a href=\"https://example.com/blog-post\">my title</a> — 2022-01-01</li>
+      </ul>`,
       ),
     );
   });

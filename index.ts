@@ -56,8 +56,8 @@ export class BlogPostsGeneratorConfig {
 
 export class BlogPostsGenerator {
   constructor(
-    private rssParser: RssParser,
     public readonly config: BlogPostsGeneratorConfig,
+    private rssParser: RssParser,
   ) {}
 
   private generateBadge({
@@ -74,7 +74,7 @@ export class BlogPostsGenerator {
     return `[<img src="https://img.shields.io/badge/${name}-${color}.svg?&style=for-the-badge&logo=${logoName}&logoColor=white" height=${this.config.badgeHeight}>](${url})`;
   }
 
-  async generateBlogPosts(): Promise<string> {
+  private async generateBlogPosts(): Promise<string> {
     const feedItems = await this.rssParser.parseBlogFeedItems(
       this.config.urls.blogUrl,
     );
@@ -97,7 +97,9 @@ export class BlogPostsGenerator {
       </ul>`;
   }
 
-  generateText(blogPosts: string): string {
+  async generateMdText(): Promise<string> {
+    const blogPosts = await this.generateBlogPosts();
+
     const mastodonBadge = this.generateBadge({
       name: "mastodon",
       color: "6364FF",
@@ -156,8 +158,8 @@ export async function writeToFile(
   }
 }
 
-async function buildTextFromRssFeed() {
-  const blogPostGeneratorConfig = new BlogPostsGeneratorConfig(
+async function buildMdFromRssFeed() {
+  const blogPostsGeneratorConfig = new BlogPostsGeneratorConfig(
     {
       blogUrl,
       mastodonUrl,
@@ -170,17 +172,16 @@ async function buildTextFromRssFeed() {
   );
 
   const blogPostsGenerator = new BlogPostsGenerator(
+    blogPostsGeneratorConfig,
     rssParser,
-    blogPostGeneratorConfig,
   );
-  const blogPosts = await blogPostsGenerator.generateBlogPosts();
-  return blogPostsGenerator.generateText(blogPosts);
+  return await blogPostsGenerator.generateMdText();
 }
 
 async function main(): Promise<void> {
-  const rawText = await buildTextFromRssFeed();
-  const rendered = markdownRenderer.renderMarkdown(rawText);
-  await writeToFile("README.md", rendered);
+  const mdText = await buildMdFromRssFeed();
+  const rendered = markdownRenderer.renderMarkdown(mdText);
+  writeToFile("README.md", rendered);
 }
 
 try {
