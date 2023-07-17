@@ -9,7 +9,7 @@ export class RuntimeException extends Error {
   }
 }
 
-class CheckedException extends Error {
+export class CheckedException extends Error {
   constructor(input?: unknown) {
     super(input instanceof Error ? input.message : String(input));
     this.name = this.constructor.name;
