@@ -88,7 +88,8 @@ export class BlogPostsGenerator {
     const links = feedItems
       .slice(0, this.config.blogPostLimit)
       .map(
-        ({ link, title, pubDate }) => `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
+        ({ link, title, pubDate }) =>
+          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
       .join('');
 
@@ -121,13 +122,13 @@ export class BlogPostsGenerator {
     const typeScriptBadge = this.generateBadge({
       name: 'TypeScript',
       color: '007acc',
-      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/index.ts',
+      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.ts',
       logoName: 'TypeScript',
     });
     const jestBadge = this.generateBadge({
       name: 'Jest',
       color: 'C21325',
-      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/index.spec.ts',
+      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.spec.ts',
       logoName: 'Jest',
     });
 
