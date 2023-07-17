@@ -88,8 +88,7 @@ export class BlogPostsGenerator {
     const links = feedItems
       .slice(0, this.config.blogPostLimit)
       .map(
-        ({ link, title, pubDate }) =>
-          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
+        ({ link, title, pubDate }) => `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
       .join('');
 
