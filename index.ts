@@ -1,21 +1,22 @@
-import MarkdownIt from "markdown-it";
-import emoji from "markdown-it-emoji";
-import fs from "fs/promises";
-import Parser, { Item } from "rss-parser";
+/* eslint-disable max-classes-per-file */
+import MarkdownIt from 'markdown-it';
+import emoji from 'markdown-it-emoji';
+import fs from 'fs/promises';
+import Parser, { Item } from 'rss-parser';
 import {
   BlogFeedException,
   EmptyArrayException,
   ImpossibleException,
   WriteFileException,
-} from "./util";
+} from './util';
 
-const blogUrl = "https://www.rockyourcode.com";
-const websiteUrl = "https://www.sophiabrandt.com";
-const mastodonUrl = "https://hachyderm.io/@sbr";
-const linkedInUrl = "https://www.linkedin.com/in/sophiabrandt";
-const devToUrl = "https://dev.to/sophiabrandt";
-const blogPostLimit = 5;
-const badgeHeight = "25";
+const BLOG_URL = 'https://www.rockyourcode.com';
+const WEBSITE_URL = 'https://www.sophiabrandt.com';
+const MASTODON_URL = 'https://hachyderm.io/@sbr';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/sophiabrandt';
+const DEV_TO_URL = 'https://dev.to/sophiabrandt';
+const BLOG_POST_LIMIT = 5;
+const BADGE_HEIGHT = '25';
 
 export class MarkdownRenderer {
   constructor(private md: MarkdownIt) {}
@@ -87,10 +88,9 @@ export class BlogPostsGenerator {
     const links = feedItems
       .slice(0, this.config.blogPostLimit)
       .map(
-        ({ link, title, pubDate }) =>
-          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
+        ({ link, title, pubDate }) => `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
-      .join("");
+      .join('');
 
     return `<ul>
         ${links}
@@ -101,37 +101,38 @@ export class BlogPostsGenerator {
     const blogPosts = await this.generateBlogPosts();
 
     const mastodonBadge = this.generateBadge({
-      name: "mastodon",
-      color: "6364FF",
+      name: 'mastodon',
+      color: '6364FF',
       url: this.config.urls.mastodonUrl,
-      logoName: "mastodon",
+      logoName: 'mastodon',
     });
     const linkedInBadge = this.generateBadge({
-      name: "linkedin",
-      color: "0077B5",
+      name: 'linkedin',
+      color: '0077B5',
       url: this.config.urls.linkedInUrl,
-      logoName: "linkedin",
+      logoName: 'linkedin',
     });
     const devToBadge = this.generateBadge({
-      name: "DEV.TO",
-      color: "0A0A0A",
+      name: 'DEV.TO',
+      color: '0A0A0A',
       url: this.config.urls.devToUrl,
-      logoName: "dev-dot-to",
+      logoName: 'dev-dot-to',
     });
     const typeScriptBadge = this.generateBadge({
-      name: "TypeScript",
-      color: "007acc",
-      url: "https://github.com/sophiabrandt/sophiabrandt/blob/master/index.ts",
-      logoName: "TypeScript",
+      name: 'TypeScript',
+      color: '007acc',
+      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/index.ts',
+      logoName: 'TypeScript',
     });
     const jestBadge = this.generateBadge({
-      name: "Jest",
-      color: "C21325",
-      url: "https://github.com/sophiabrandt/sophiabrandt/blob/master/index.spec.ts",
-      logoName: "Jest",
+      name: 'Jest',
+      color: 'C21325',
+      url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/index.spec.ts',
+      logoName: 'Jest',
     });
 
-    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT consultancy. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\n\I enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.\nRewritten to use TypeScript & Jest.\n${typeScriptBadge} ${jestBadge}`;
+    // eslint-disable-next-line no-irregular-whitespace
+    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT consultancy. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\nI enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.\nRewritten to use TypeScript & Jest.\n${typeScriptBadge} ${jestBadge}`;
 
     return text;
   }
@@ -161,27 +162,27 @@ export async function writeToFile(
 async function buildMdFromRssFeed() {
   const blogPostsGeneratorConfig = new BlogPostsGeneratorConfig(
     {
-      blogUrl,
-      mastodonUrl,
-      linkedInUrl,
-      devToUrl,
-      websiteUrl,
+      blogUrl: BLOG_URL,
+      mastodonUrl: MASTODON_URL,
+      linkedInUrl: LINKEDIN_URL,
+      devToUrl: DEV_TO_URL,
+      websiteUrl: WEBSITE_URL,
     },
-    blogPostLimit,
-    badgeHeight,
+    BLOG_POST_LIMIT,
+    BADGE_HEIGHT,
   );
 
   const blogPostsGenerator = new BlogPostsGenerator(
     blogPostsGeneratorConfig,
     rssParser,
   );
-  return await blogPostsGenerator.generateMdText();
+  return blogPostsGenerator.generateMdText();
 }
 
 async function main(): Promise<void> {
   const mdText = await buildMdFromRssFeed();
   const rendered = markdownRenderer.renderMarkdown(mdText);
-  writeToFile("README.md", rendered);
+  writeToFile('README.md', rendered);
 }
 
 try {

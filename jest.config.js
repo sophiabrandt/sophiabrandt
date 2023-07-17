@@ -1,13 +1,13 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   reporters: [
-    "default",
+    'default',
     [
-      "./node_modules/jest-html-reporter",
+      './node_modules/jest-html-reporter',
       {
-        pageTitle: "Test Report",
+        pageTitle: 'Test Report',
       },
     ],
   ],
