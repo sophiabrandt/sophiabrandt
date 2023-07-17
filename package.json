@@ -4,7 +4,7 @@
   "description": "self-updating readme",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node src/index.ts",
     "format": "prettier --write \"{,!(node_modules)/**/}*.{js,ts}\"",
     "lint": "eslint --fix \"{,!(node_modules)/**/}*.{js,ts}\"",
     "test": "jest",

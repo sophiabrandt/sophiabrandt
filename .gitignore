@@ -43,6 +43,7 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
+test-report.html
 
 # nyc test coverage
 .nyc_output
@@ -130,5 +131,3 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,node
 #
-.prettierrc.json
-.eslintrc.json
