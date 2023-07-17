@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 export class RuntimeException extends Error {
   constructor(input?: unknown) {
     super(input instanceof Error ? input.message : String(input));
@@ -19,28 +20,28 @@ export class CheckedException extends Error {
 
 export class BlogFeedException extends CheckedException {
   constructor(input?: unknown) {
-    super(input || "There was an error parsing the blog feed");
+    super(input || 'There was an error parsing the blog feed');
     Object.setPrototypeOf(this, BlogFeedException.prototype);
   }
 }
 
 export class EmptyArrayException extends CheckedException {
   constructor(input?: unknown) {
-    super(input || "Empty array is not allowed as input");
+    super(input || 'Empty array is not allowed as input');
     Object.setPrototypeOf(this, BlogFeedException.prototype);
   }
 }
 
 export class WriteFileException extends CheckedException {
   constructor(input?: unknown) {
-    super(input || "There was an error writing to the file system");
+    super(input || 'There was an error writing to the file system');
     Object.setPrototypeOf(this, BlogFeedException.prototype);
   }
 }
 
 export class ImpossibleException extends RuntimeException {
   constructor(input?: unknown) {
-    super(input || "This operation is impossible");
+    super(input || 'This operation is impossible');
     Object.setPrototypeOf(this, ImpossibleException.prototype);
   }
 }
