@@ -12,4 +12,4 @@ When I was on parental leave, I started teaching myself to code - and I never lo
 <a href=https://www.rockyourcode.com>:arrow_right: More blog posts</a><hr />
 <p>Original GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.<br>
 Rewritten to use TypeScript &amp; Jest.<br>
-<a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.ts"><img src="https://img.shields.io/badge/TypeScript-007acc.svg?&style=for-the-badge&logo=TypeScript&logoColor=white" height=25></a> <a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.spec.ts"><img src="https://img.shields.io/badge/Jest-C21325.svg?&style=for-the-badge&logo=Jest&logoColor=white" height=25></a></p>
+<a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.ts"><img src="https://img.shields.io/badge/TypeScript-007acc.svg?&style=for-the-badge&logo=TypeScript&logoColor=white" height=25></a> <a href="https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.spec.ts"><img src="https://img.shields.io/badge/Vitest-86b91ad9.svg?&style=for-the-badge&logo=Vitest&logoColor=white" height=25></a></p>

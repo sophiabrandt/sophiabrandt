@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import MarkdownIt from 'markdown-it';
-import emoji from 'markdown-it-emoji';
+import { full as emoji } from 'markdown-it-emoji';
 import fs from 'fs/promises';
 import Parser, { Item } from 'rss-parser';
 import {
@@ -8,7 +8,7 @@ import {
   EmptyArrayException,
   ImpossibleException,
   WriteFileException,
-} from './util';
+} from './util.js';
 
 const BLOG_URL = 'https://www.rockyourcode.com';
 const WEBSITE_URL = 'https://www.sophiabrandt.com';
@@ -88,7 +88,8 @@ export class BlogPostsGenerator {
     const links = feedItems
       .slice(0, this.config.blogPostLimit)
       .map(
-        ({ link, title, pubDate }) => `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
+        ({ link, title, pubDate }) =>
+          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
       .join('');
 
@@ -124,15 +125,15 @@ export class BlogPostsGenerator {
       url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.ts',
       logoName: 'TypeScript',
     });
-    const jestBadge = this.generateBadge({
-      name: 'Jest',
-      color: 'C21325',
+    const vitestBadge = this.generateBadge({
+      name: 'Vitest',
+      color: '86b91ad9',
       url: 'https://github.com/sophiabrandt/sophiabrandt/blob/master/src/index.spec.ts',
-      logoName: 'Jest',
+      logoName: 'Vitest',
     });
 
     // eslint-disable-next-line no-irregular-whitespace
-    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT service provider as a full-stack software engineer. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\nI enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.\nRewritten to use TypeScript & Jest.\n${typeScriptBadge} ${jestBadge}`;
+    const text = `# Hi. :wave:\n\nMy name is Sophia Brandt. I'm a former tax officer turned software developer from Germany.\n\nI currently work at an IT service provider as a full-stack software engineer. I also volunteer as a mentor for the Zero to Mastery Academy, home to over 400k students learning to code.\nWhen I was on parental leave, I started teaching myself to code - and I never looked back. :purple_heart:\n\nI enjoy learning new programming languages, language learning (currently Esperanto & Spanish), reading and writing.\n\n${mastodonBadge} ${linkedInBadge} ${devToBadge}\n\n[:globe_with_meridians: Check out my website](${this.config.urls.websiteUrl})\n\n## Latest Blog Posts\n${blogPosts}\n<a href=${this.config.urls.blogUrl}>:arrow_right: More blog posts</a><hr />\n\nOriginal GitHub script provided by <a href="https://github.com/Mokkapps/mokkapps/blob/master/index.js">Mokkapps</a>.\nRewritten to use TypeScript & Jest.\n${typeScriptBadge} ${vitestBadge}`;
 
     return text;
   }
