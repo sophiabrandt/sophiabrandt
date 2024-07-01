@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "tsc && node ./dist/index.js",
     "format": "prettier --write \"{,!(node_modules)/**/}*.{js,ts}\"",
     "test": "vitest",
     "test:cov": "vitest run --coverage",
@@ -34,7 +34,6 @@
     "@types/node": "^20.14.9",
     "@vitest/coverage-v8": "^1.6.0",
     "husky": "^8.0.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
     "vitest": "^1.6.0"
   }
