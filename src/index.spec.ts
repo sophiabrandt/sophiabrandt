@@ -66,9 +66,10 @@ describe('RssParser', () => {
 });
 
 describe('BlogPostGenerator', () => {
-  const getEmptyFeedItemsParser = (): Parser => assertType<Parser>({
-    parseURL: jest.fn().mockReturnValue({ items: [] }),
-  });
+  const getEmptyFeedItemsParser = (): Parser =>
+    assertType<Parser>({
+      parseURL: jest.fn().mockReturnValue({ items: [] }),
+    });
 
   const getMockFeedParser = (): Parser => {
     const mockFeed = {
