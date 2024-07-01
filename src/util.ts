@@ -28,14 +28,14 @@ export class BlogFeedException extends CheckedException {
 export class EmptyArrayException extends CheckedException {
   constructor(input?: unknown) {
     super(input || 'Empty array is not allowed as input');
-    Object.setPrototypeOf(this, BlogFeedException.prototype);
+    Object.setPrototypeOf(this, EmptyArrayException.prototype);
   }
 }
 
 export class WriteFileException extends CheckedException {
   constructor(input?: unknown) {
     super(input || 'There was an error writing to the file system');
-    Object.setPrototypeOf(this, BlogFeedException.prototype);
+    Object.setPrototypeOf(this, WriteFileException.prototype);
   }
 }
 

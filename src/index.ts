@@ -19,7 +19,7 @@ const BLOG_POST_LIMIT = 5;
 const BADGE_HEIGHT = '25';
 
 export class MarkdownRenderer {
-  constructor(private md: MarkdownIt) { }
+  constructor(private md: MarkdownIt) {}
 
   renderMarkdown(text: string): string {
     return this.md.render(text);
@@ -27,7 +27,7 @@ export class MarkdownRenderer {
 }
 
 export class RssParser {
-  constructor(private parser: Parser) { }
+  constructor(private parser: Parser) {}
 
   async parseBlogFeedItems(blogUrl: string): Promise<Item[]> {
     try {
@@ -52,14 +52,14 @@ export class BlogPostsGeneratorConfig {
     public readonly urls: URLs,
     public readonly blogPostLimit: number,
     public readonly badgeHeight: string,
-  ) { }
+  ) {}
 }
 
 export class BlogPostsGenerator {
   constructor(
     public readonly config: BlogPostsGeneratorConfig,
     private rssParser: RssParser,
-  ) { }
+  ) {}
 
   private generateBadge({
     name,
