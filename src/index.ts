@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import MarkdownIt from 'markdown-it';
-import emoji from 'markdown-it-emoji';
+import { full as emoji } from 'markdown-it-emoji';
 import fs from 'fs/promises';
 import Parser, { Item } from 'rss-parser';
 import {
@@ -88,7 +88,8 @@ export class BlogPostsGenerator {
     const links = feedItems
       .slice(0, this.config.blogPostLimit)
       .map(
-        ({ link, title, pubDate }) => `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
+        ({ link, title, pubDate }) =>
+          `<li><a href="${link}">${title}</a> — ${pubDate}</li>`,
       )
       .join('');
 
