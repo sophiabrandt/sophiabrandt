@@ -15,8 +15,8 @@ describe('MarkdownRenderer', () => {
     const txt = '## Text';
     const rendered = '<h2>Text</h2>\n';
     const markdownItInstance = assertType<MarkdownIt>({
-      render: jest.fn().mockReturnValue(rendered),
-      use: jest.fn(),
+      render: vi.fn().mockReturnValue(rendered),
+      use: vi.fn(),
     });
     const markdownRenderer = new MarkdownRenderer(markdownItInstance);
 
@@ -38,7 +38,7 @@ describe('RssParser', () => {
       ],
     };
     const parserInstance = assertType<Parser>({
-      parseURL: jest.fn().mockReturnValue(mockFeed),
+      parseURL: vi.fn().mockReturnValue(mockFeed),
     });
     const rssParser = new RssParser(parserInstance);
     const url = 'https://example.com';
@@ -52,7 +52,7 @@ describe('RssParser', () => {
   it('throws BlogFeedException when parsing fails', async () => {
     const error = new Error('Parse error');
     const parserInstance = assertType<Parser>({
-      parseURL: jest.fn().mockRejectedValue(error),
+      parseURL: vi.fn().mockRejectedValue(error),
     });
 
     const rssParser = new RssParser(parserInstance);
@@ -68,7 +68,7 @@ describe('RssParser', () => {
 describe('BlogPostGenerator', () => {
   const getEmptyFeedItemsParser = (): Parser =>
     assertType<Parser>({
-      parseURL: jest.fn().mockReturnValue({ items: [] }),
+      parseURL: vi.fn().mockReturnValue({ items: [] }),
     });
 
   const getMockFeedParser = (): Parser => {
@@ -84,7 +84,7 @@ describe('BlogPostGenerator', () => {
     };
 
     return assertType<Parser>({
-      parseURL: jest.fn().mockReturnValue(mockFeed),
+      parseURL: vi.fn().mockReturnValue(mockFeed),
     });
   };
 
@@ -160,7 +160,7 @@ describe('BlogPostGenerator', () => {
 
 describe('writeToFile', () => {
   it('successfully writes to a file', async () => {
-    jest.spyOn(fs.promises, 'writeFile').mockResolvedValue();
+    vi.spyOn(fs.promises, 'writeFile').mockResolvedValue();
 
     const filename = 'test.txt';
     const content = 'This is a test content';
@@ -171,7 +171,7 @@ describe('writeToFile', () => {
 
   it('throws WriteFileException if writeFile fails', async () => {
     const error = new Error('writeFile failed');
-    jest.spyOn(fs.promises, 'writeFile').mockRejectedValue(error);
+    vi.spyOn(fs.promises, 'writeFile').mockRejectedValue(error);
 
     const filename = 'test.txt';
     const content = 'This is a test content';
