@@ -2,13 +2,13 @@
 import MarkdownIt from 'markdown-it';
 import { full as emoji } from 'markdown-it-emoji';
 import fs from 'fs/promises';
-import Parser, { Item } from 'rss-parser';
+import Parser, { type Item } from 'rss-parser';
 import {
   BlogFeedException,
   EmptyArrayException,
   ImpossibleException,
   WriteFileException,
-} from './util.js';
+} from './util';
 
 const BLOG_URL = 'https://www.rockyourcode.com';
 const WEBSITE_URL = 'https://www.sophiabrandt.com';
@@ -19,7 +19,7 @@ const BLOG_POST_LIMIT = 5;
 const BADGE_HEIGHT = '25';
 
 export class MarkdownRenderer {
-  constructor(private md: MarkdownIt) {}
+  constructor(private md: MarkdownIt) { }
 
   renderMarkdown(text: string): string {
     return this.md.render(text);
@@ -27,7 +27,7 @@ export class MarkdownRenderer {
 }
 
 export class RssParser {
-  constructor(private parser: Parser) {}
+  constructor(private parser: Parser) { }
 
   async parseBlogFeedItems(blogUrl: string): Promise<Item[]> {
     try {
@@ -52,14 +52,14 @@ export class BlogPostsGeneratorConfig {
     public readonly urls: URLs,
     public readonly blogPostLimit: number,
     public readonly badgeHeight: string,
-  ) {}
+  ) { }
 }
 
 export class BlogPostsGenerator {
   constructor(
     public readonly config: BlogPostsGeneratorConfig,
     private rssParser: RssParser,
-  ) {}
+  ) { }
 
   private generateBadge({
     name,
